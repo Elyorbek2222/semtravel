@@ -2,7 +2,7 @@ export const translations = {
   uz: {
     // Top Bar
     topbar: {
-      work_hours: "Har kuni ishlaymiz · 09:00–21:00 · Toshkent",
+      work_hours: "Har kuni ishlaymiz · 09:00–19:00 · Toshkent",
     },
     // Navbar
     nav: {
@@ -163,10 +163,10 @@ export const translations = {
         {
           ava: "SD",
           color: "#C9A84C",
-          exp: "Viza bo'yicha mutaxassis",
+          exp: "Asoschi",
           name: "Sardorbek",
-          role: "Hujjat va vizalar",
-          desc: "Dunyoning eng qattiq elchixonalari ro'yxatidan qanday qilib ishonchli va radjavobsiz viza olish sirlarini hamda tartiblarini yaxshi biladi.",
+          role: "Asoschisi va rahbar",
+          desc: "SEM Travel kompaniyasining asoschisi. Yillar davomida minglab sayohatlarni tashkil etib, kompaniyani O'zbekistonning eng ishonchli turistik agentliklaridan biriga aylantirdi.",
         },
       ],
     },
@@ -231,6 +231,68 @@ export const translations = {
           img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=75",
         },
       ],
+      // Blog Page additions
+      page: {
+        hero_tag: "✍️ SEM Travel Blogi",
+        hero_h1: "Foydali maslahatlar<br/>va <em>turizm yangiliklari</em>",
+        hero_sub: "Biz yangi yo'nalishlar, vizalar sirlari va sayohat qoidalarini bo'lishamiz.",
+        filter: {
+          all: "Barcha maqolalar",
+          visa: "Vizalar",
+          tr: "Turkiya",
+          ae: "BAA",
+          eu: "Yevropa",
+          tips: "Maslahatlar",
+          search: "Maqolani izlash...",
+        },
+        sidebar_cats: "Kategoriyalar",
+        sidebar_popular: "Katta Qiziqishdagi Maqolalar",
+        sidebar_cta_h: "Sayohat tayyormi?",
+        sidebar_cta_sub: "15 daqiqada sizga eng arzon narxda sifatli reja tuzamiz",
+      },
+      // Blog Post specific text
+      post: {
+        cat: "💡 Sayohat maslahatlari",
+        h1: "Toshkentdan qanday xavfsiz sayohat qilish: to'liq qo'llanma",
+        date: "12-mart, 2026",
+        read_time: "10 daqiqa",
+        views: "2 400 marta ko'rildi",
+        content: `
+          <p>Har yili minglab O'zbekistonliklar xorijga - Turkiya, BAA, Yevropaga parvoz qilishadi. Biroq ko'pchilik aeroportda qanday muammolar kelib chiqishini va sug'urtadagi arzimas xatolik bilan viza ololmasligini bilishmaydi.</p>
+          <div class="callout callout-info">
+            <span class="callout-emoji">ℹ️</span>
+            <div class="callout-text">Bu qo'llanma 15 yillik hayotiy va ishonchli faktlarga asoslangan. Bunda haqiqiy sayohat paytidagi sirlarni ocha boshlaymiz.</div>
+          </div>
+          <h2 id="docs">1. Kerakli muhim hujjatlar</h2>
+          <ul>
+            <li><strong>Xorijga chiqish pasporti(qizil)</strong> — kamida 6 oy muddati borligi</li>
+            <li><strong>Viza</strong> — oldindan to'g'ri to'ldirish va vizani rasmiyatchiligini hal qilish</li>
+            <li><strong>Mehmonxona bron qog'ozi</strong> — bojxonada albatta tekshirishadi</li>
+            <li><strong>Tibbiy sug'urta</strong> — shengen va aksar davlatlar uchun o'ta majburiy sirt</li>
+          </ul>
+          <div class="callout callout-warn">
+            <span class="callout-emoji">⚠️</span>
+            <div class="callout-text"><strong>Muhim:</strong> Shengen hududiga kiruvchilar uchun tibbiy sug'urtaning bazaviy narxi kamida €30 000 ni tashkil etishi majburiy. Bo'lmasa vizadan rad javobi olinadi.</div>
+          </div>
+          <h2 id="price">2. Nima uchun narxni So'mda aytish kerak?</h2>
+          <p>Bozordagi aksar tur-kompaniyalar hisob kitobni dollarda ($) aytishadi, ammo uni to'layotgan payt valyuta kursi uchib ketib bir necha million zarar bo'lishingiz mumkin. Shuning uchun SEM Travel orqali barcha raqamlarni O'zbek so'mida (aniq va qat'iy) kelishiladi.</p>
+          <h2 id="airport">3. Aeroport ichidagi eng katta qo'rquvlar</h2>
+          <ol>
+            <li>Toshkent aeroportiga kamida <strong>3 soat</strong> vaqtli borish</li>
+            <li>Ro'yhatdan avval o'tish (registratsiya oynalari ketishdan 2-3 soat oldin boshlanadi)</li>
+            <li>Bojxona tekshiruvi: 2000$ dan oshiqlarni taqdim qiling</li>
+            <li>Kutish hududidagi tablolarga alohida e'tibor qarating</li>
+          </ol>
+          <div class="callout callout-tip">
+            <span class="callout-emoji">✅</span>
+            <div class="callout-text"><strong>Maslahat:</strong> Rakamingizda bizning kompaniya bilan 24/7 aloqa borligini unutmang. Biror narsa chigal kelsa qong'iroq qiling!Biz har qanday holatda muammoni zudlikda hal etib yuboramiz.</div>
+          </div>
+        `,
+        tags: ["Maslahatlar", "Aeroport", "Hujjatlar", "Narx", "Toshkent", "Yordam"],
+        share: "Maqolani do'stlarga yuborish",
+        related: "Bular ham qiziq",
+        toc: "Mundarija",
+      }
     },
     // Contact
     contact: {
@@ -245,8 +307,8 @@ export const translations = {
       info: {
         title: "To'g'ridan to'g'ri aloqa",
         addr: "📍 Toshkent, O'zbekiston",
-        phone: "📞 +998 90 123 45 67",
-        tg: "💬 Telegramda @semtravel",
+        phone: "📞 +998 71 275 55 55",
+        tg: "💬 @orifjonovtg (Telegram)",
       },
       form: {
         tag: "Bepul Konsultatsiya",
@@ -295,7 +357,7 @@ export const translations = {
   ru: {
     // Top Bar
     topbar: {
-      work_hours: "Работаем ежедневно · 09:00–21:00 · Ташкент",
+      work_hours: "Работаем ежедневно · 09:00–19:00 · Ташкент",
     },
     // Navbar
     nav: {
@@ -456,10 +518,10 @@ export const translations = {
         {
           ava: "СД",
           color: "#C9A84C",
-          exp: "Визовый специалист",
+          exp: "Основатель",
           name: "Сардорбек",
-          role: "Визы и документы",
-          desc: "Сопровождает на всех этапах оформления виз. Подготовка документов и помощь при подаче на шенгенские, американские и британские визы.",
+          role: "Основатель",
+          desc: "Основатель SEM Travel. За годы работы организовал тысячи путешествий и сделал компанию одним из самых надёжных туристических агентств Узбекистана.",
         },
       ],
     },
@@ -524,6 +586,76 @@ export const translations = {
           img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=75",
         },
       ],
+      page: {
+        hero_tag: "✍️ Блог SEM Travel",
+        hero_h1: "Полезные советы<br/>и <em>новости туризма</em>",
+        hero_sub: "Рассказываем о направлениях, делимся лайфхаками и отвечаем на самые частые вопросы путешественников из Узбекистана.",
+        filter: {
+          all: "Все статьи",
+          visa: "Визы",
+          tr: "Турция",
+          ae: "ОАЭ",
+          eu: "Европа",
+          tips: "Советы",
+          search: "Поиск по статьям...",
+        },
+        sidebar_cats: "Категории",
+        sidebar_popular: "Популярное",
+        sidebar_cta_h: "Нужна консультация?",
+        sidebar_cta_sub: "Подберём тур под ваш бюджет за 15 минут",
+      },
+      post: {
+        cat: "💡 Советы путешественникам",
+        h1: "Как безопасно путешествовать из Ташкента: полный гид на 2026 год",
+        date: "12 марта 2026",
+        read_time: "10 мин чтения",
+        views: "2 400 просмотров",
+        content: `
+          <p>Каждый год тысячи жителей Узбекистана летят за рубеж — в Турцию, ОАЭ, Европу. Но многие сталкиваются с одними и теми же страхами: <strong>застрять в аэропорту, потерять деньги из-за курса или не разобраться с визой</strong>. В этом гиде — всё, что нужно знать, чтобы путешествие прошло без стресса.</p>
+
+          <div class="callout callout-info">
+            <span class="callout-emoji">ℹ️</span>
+            <div class="callout-text">Этот гид написан на основе 15-летнего опыта организации туров из Ташкента. Здесь нет воды — только практические советы, которые работают.</div>
+          </div>
+
+          <h2 id="docs">1. Документы: что обязательно нужно</h2>
+          <p>Перед любой поездкой убедитесь, что у вас есть следующие документы:</p>
+          <ul>
+            <li><strong>Загранпаспорт</strong> — срок действия минимум 6 месяцев после даты возвращения</li>
+            <li><strong>Виза</strong> — для большинства стран гражданам Узбекистана нужна виза заранее</li>
+            <li><strong>Авиабилеты</strong> — распечатайте или сохраните в телефоне</li>
+            <li><strong>Бронь отеля</strong> — часто проверяют на паспортном контроле</li>
+            <li><strong>Медицинская страховка</strong> — обязательна для Шенгена, рекомендована везде</li>
+          </ul>
+
+          <div class="callout callout-warn">
+            <span class="callout-emoji">⚠️</span>
+            <div class="callout-text"><strong>Важно:</strong> Для шенгенских стран страховка должна покрывать минимум €30 000. Без этого визу не дадут.</div>
+          </div>
+
+          <h2 id="price">2. Почему цена в сумах — это важно</h2>
+          <p>Многие агентства называют цену в долларах или евро. Это значит, что к моменту оплаты вы можете заплатить больше — курс постоянно меняется. Мы в SEM Travel фиксируем цену в сумах с момента бронирования.</p>
+
+          <h2 id="airport">3. Что делать в аэропорту</h2>
+          <p>Аэропорт — самое стрессовое место для неопытного путешественника. Вот простой алгоритм:</p>
+          <ol>
+            <li>Приезжайте минимум за <strong>3 часа</strong> до вылета из Ташкента</li>
+            <li>Пройдите регистрацию (стойки открываются за 2–3 часа)</li>
+            <li>Таможенный контроль: декларируйте суммы свыше $2000</li>
+            <li>Паспортный контроль: визу и билеты держите наготове</li>
+            <li>Зона вылета: ваш выход будет указан на табло</li>
+          </ol>
+
+          <div class="callout callout-tip">
+            <span class="callout-emoji">✅</span>
+            <div class="callout-text"><strong>Лайфхак:</strong> Сохраните наш номер в телефоне. Мы отвечаем 24/7 — если возникнут вопросы прямо в аэропорту, звоните.</div>
+          </div>
+        `,
+        tags: ["Советы", "Аэропорт", "Документы", "Цена в сумах", "Поддержка 24/7", "Ташкент"],
+        share: "Поделитесь статьёй с друзьями",
+        related: "Читайте также",
+        toc: "Содержание",
+      }
     },
     // Contact
     contact: {
@@ -538,8 +670,8 @@ export const translations = {
       info: {
         title: "Прямые контакты",
         addr: "📍 Ташкент, Узбекистан",
-        phone: "📞 +998 90 123 45 67",
-        tg: "💬 @semtravel в Telegram",
+        phone: "📞 +998 71 275 55 55",
+        tg: "💬 @orifjonovtg в Telegram",
       },
       form: {
         tag: "Бесплатная консультация",
