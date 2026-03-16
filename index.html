@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEM Travel — Путешествуйте без страха 24/7 / Qo'rquvsiz sayohat</title>
+    <meta name="description" content="SEM Travel — надёжное туристическое агентство в Ташкенте. Туры в Турцию, ОАЭ, Европу. Цена в сумах. Поддержка 24/7. / Toshkentdagi ishonchli turistik agentlik." />
+    
+    <!-- Open Graph / Social SEO -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://semtravel.uz/" />
+    <meta property="og:title" content="SEM Travel — Путешествуйте без страха 24/7" />
+    <meta property="og:description" content="SEM Travel — надёжное туристическое агентство в Ташкенте. Туры в Турцию, ОАЭ, Европу." />
+    <!-- Link to the logo image -->
+    <meta property="og:image" content="https://semtravel.uz/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- GEO Tags for Local SEO -->
+    <meta name="geo.region" content="UZ-TK" />
+    <meta name="geo.placename" content="Tashkent" />
+    <meta name="geo.position" content="41.2995;69.2401" />
+    <meta name="ICBM" content="41.2995, 69.2401" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Telegram Mini App Script -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- Schema.org Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "SEM Travel",
+      "image": "https://semtravel.uz/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tashkent",
+        "addressCountry": "UZ"
+      },
+      "telephone": "+998901234567",
+      "url": "https://semtravel.uz/"
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Injects custom styles config or init logic for Mini App -->
+    <script>
+      // Initialize Telegram Mini App theme settings
+      if (window.Telegram && window.Telegram.WebApp) {
+        window.Telegram.WebApp.ready();
+        window.Telegram.WebApp.expand();
+      }
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

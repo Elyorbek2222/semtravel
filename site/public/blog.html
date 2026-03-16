@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Блог — SEM Travel | Советы путешественникам</title>
+  <meta name="description" content="Полезные статьи о путешествиях, советы по визам, обзоры направлений и новости туризма от SEM Travel." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#0F2552;--blue-mid:#1B3A6B;--blue-light:#EEF3FF;
+  --gold:#C9A84C;--gold-light:#FBF3DC;
+  --white:#fff;--gray:#F7F8FA;--border:#E8EAF0;
+  --text:#0F172A;--muted:#64748B;
+  --shadow:0 4px 24px rgba(15,37,82,.09);
+  --shadow-lg:0 12px 48px rgba(15,37,82,.15);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%;height:auto}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ── TOP BAR ── */
+.topbar{background:var(--blue);color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:32px;padding:9px 24px;flex-wrap:wrap}
+.topbar a{color:#fff;display:inline-flex;align-items:center;gap:6px;opacity:.9;transition:opacity .2s}
+.topbar a:hover{opacity:1}
+.topbar-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--blue)}
+.nav-logo-text span{color:var(--gold)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--blue)}
+.nav-links a.active{font-weight:700}
+.nav-cta{background:var(--gold);color:#fff;padding:10px 22px;border-radius:8px;font-size:14px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.nav-cta:hover{background:#b8922e}
+#burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+#burger div{width:22px;height:2px;background:var(--text);border-radius:1px}
+#mob-menu{display:none;background:#fff;border-top:1px solid var(--border);padding:20px 24px}
+#mob-menu.open{display:flex;flex-direction:column;gap:16px}
+#mob-menu a{font-size:15px;font-weight:500;color:var(--text)}
+
+/* ── HERO ── */
+.blog-hero{background:var(--blue);padding:72px 24px 64px;text-align:center;position:relative;overflow:hidden}
+.blog-hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1400&q=70') center/cover no-repeat;opacity:.12}
+.blog-hero-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.blog-hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.4);color:#F5D98A;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:24px}
+.blog-hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:16px}
+.blog-hero-h1 em{color:#F5D98A;font-style:italic}
+.blog-hero-sub{font-size:17px;color:rgba(255,255,255,.7);line-height:1.7;max-width:520px;margin:0 auto}
+
+/* ── SEARCH & FILTER ── */
+.blog-filter{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:90;padding:0 24px}
+.blog-filter-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 0}
+.filter-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tab{padding:8px 18px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid var(--border);background:#fff;color:var(--muted);transition:all .2s}
+.tab:hover{border-color:var(--gold);color:var(--gold)}
+.tab.active{background:var(--gold);border-color:var(--gold);color:#fff}
+.search-box{display:flex;align-items:center;gap:10px;border:1.5px solid var(--border);border-radius:10px;padding:8px 16px;min-width:220px;transition:border-color .2s}
+.search-box:focus-within{border-color:var(--gold)}
+.search-box input{border:none;outline:none;font-size:14px;color:var(--text);font-family:'Inter',sans-serif;width:100%;background:transparent}
+.search-box input::placeholder{color:var(--muted)}
+
+/* ── MAIN GRID ── */
+.blog-main{padding:64px 24px 96px;background:var(--gray)}
+.blog-inner{max-width:1200px;margin:0 auto}
+.featured-label{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:24px}
+.featured-label::before{content:'';display:block;width:28px;height:2px;background:var(--gold)}
+
+/* Featured post */
+.post-featured{
+  display:grid;grid-template-columns:1fr 1fr;
+  background:#fff;border-radius:20px;overflow:hidden;
+  box-shadow:var(--shadow-lg);margin-bottom:48px;
+  transition:transform .3s;
+}
+.post-featured:hover{transform:translateY(-4px)}
+.post-featured-img{height:100%;min-height:360px;background-size:cover;background-position:center;position:relative}
+.post-featured-badge{position:absolute;top:20px;left:20px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:6px}
+.post-featured-body{padding:48px 40px;display:flex;flex-direction:column;justify-content:center}
+.post-cat{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.post-h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:700;color:var(--blue);line-height:1.25;margin-bottom:16px}
+.post-excerpt{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.post-meta{display:flex;align-items:center;gap:16px;font-size:13px;color:var(--muted);margin-bottom:24px}
+.post-meta-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.post-read-btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;transition:background .2s;align-self:flex-start}
+.post-read-btn:hover{background:var(--blue-mid)}
+
+/* Posts grid */
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.post-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
+.post-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.post-card-img{height:200px;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.post-card-img-inner{height:100%;transition:transform .4s}
+.post-card:hover .post-card-img-inner{transform:scale(1.05)}
+.post-card-cat{position:absolute;bottom:14px;left:14px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:5px}
+.post-card-body{padding:24px 22px 28px}
+.post-card-h{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--blue);margin-bottom:10px;line-height:1.3;transition:color .2s}
+.post-card:hover .post-card-h{color:var(--gold)}
+.post-card-excerpt{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:18px}
+.post-card-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border)}
+.post-card-date{font-size:12px;color:var(--muted)}
+.post-card-read{font-size:12px;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:4px}
+
+/* Sidebar */
+.blog-layout{display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+.sidebar{display:flex;flex-direction:column;gap:28px}
+.sidebar-card{background:#fff;border-radius:16px;padding:28px;box-shadow:var(--shadow)}
+.sidebar-h{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--blue);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gold)}
+.sidebar-cats{display:flex;flex-direction:column;gap:8px}
+.sidebar-cat{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:8px;border:1px solid var(--border);cursor:pointer;transition:all .2s;font-size:14px;font-weight:500}
+.sidebar-cat:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-light)}
+.sidebar-cat-num{font-size:11px;font-weight:700;background:var(--gray);color:var(--muted);padding:2px 8px;border-radius:10px}
+.popular-list{display:flex;flex-direction:column;gap:14px}
+.popular-item{display:flex;gap:12px;align-items:flex-start;cursor:pointer;transition:opacity .2s}
+.popular-item:hover{opacity:.8}
+.popular-thumb{width:64px;height:56px;border-radius:8px;background-size:cover;background-position:center;flex-shrink:0}
+.popular-title{font-size:13px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:5px}
+.popular-date{font-size:11px;color:var(--muted)}
+.sidebar-cta{background:var(--blue);border-radius:16px;padding:28px;text-align:center}
+.sidebar-cta-emoji{font-size:36px;margin-bottom:12px}
+.sidebar-cta-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:10px}
+.sidebar-cta-sub{font-size:13px;color:rgba(255,255,255,.6);line-height:1.6;margin-bottom:20px}
+.sidebar-cta-btn{display:block;background:var(--gold);color:#fff;padding:12px;border-radius:8px;font-size:14px;font-weight:700;transition:background .2s}
+.sidebar-cta-btn:hover{background:#b8922e}
+.sidebar-cta-btn2{display:block;background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);padding:10px;border-radius:8px;font-size:13px;font-weight:600;margin-top:8px;transition:background .2s}
+.sidebar-cta-btn2:hover{background:rgba(255,255,255,.15)}
+
+/* Pagination */
+.pagination{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:56px}
+.page-btn{width:40px;height:40px;border-radius:8px;border:1.5px solid var(--border);background:#fff;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.page-btn:hover,.page-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
+.page-btn.dots{border:none;background:none;cursor:default}
+.page-btn.dots:hover{background:none;color:var(--muted)}
+
+/* Mobile sticky */
+.mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:199;background:#fff;border-top:1px solid var(--border);padding:12px 20px;gap:10px}
+.mob-cta a{flex:1;padding:14px;border-radius:10px;text-align:center;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
+.mob-cta-main{background:var(--gold);color:#fff}
+.mob-cta-sec{background:var(--blue-light);color:var(--blue)}
+.float-tg{position:fixed;bottom:28px;right:28px;z-index:200;width:56px;height:56px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(201,168,76,.5);transition:transform .2s;text-decoration:none}
+.float-tg:hover{transform:scale(1.1)}
+.float-tg svg{width:26px;height:26px}
+
+/* Footer */
+footer{background:var(--blue);color:#fff;padding:60px 24px 32px}
+.foot-inner{max-width:1200px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.foot-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.foot-logo span{color:var(--gold)}
+.foot-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
+.foot-h{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-links{display:flex;flex-direction:column;gap:10px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.45);transition:color .2s}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+
+@media(max-width:1024px){
+  .blog-layout{grid-template-columns:1fr}
+  .sidebar{grid-row:1;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .post-featured{grid-template-columns:1fr}
+  .post-featured-img{min-height:240px}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .nav-links,.nav-cta{display:none}
+  #burger{display:flex}
+  .posts-grid{grid-template-columns:1fr}
+  .blog-filter-inner{flex-direction:column;align-items:flex-start}
+  .foot-top{grid-template-columns:1fr}
+  .mob-cta{display:flex}
+  body{padding-bottom:80px}
+  .float-tg{display:none}
+  .sidebar{display:flex;flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span style="display:flex;align-items:center;gap:8px"><span class="topbar-dot"></span>Работаем ежедневно · 09:00–21:00</span>
+  <a href="tel:+998901234567">📞 +998 90 123 45 67</a>
+  <a href="https://t.me/semtravel" target="_blank">💬 @semtravel</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="34" height="34" viewBox="0 0 36 36"><circle cx="18" cy="18" r="18" fill="#EEF3FF"/><g transform="translate(18,18)"><path d="M0-9L1.5-2L8-5L3 0L8 5L1.5 2L0 9L-1.5 2L-8 5L-3 0L-8-5L-1.5-2Z" fill="#E87040" opacity=".9"/><circle cx="0" cy="0" r="2.5" fill="#C9A84C"/></g></svg>
+      <span class="nav-logo-text">SEM<span>Travel</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#how">Как работаем</a>
+      <a href="index.html#dest">Направления</a>
+      <a href="index.html#team">Команда</a>
+      <a href="blog.html" class="active">Блог</a>
+    </div>
+    <a href="index.html#contact" class="nav-cta">Получить консультацию</a>
+    <button id="burger" onclick="toggleMob()"><div></div><div></div><div></div></button>
+  </div>
+  <div id="mob-menu">
+    <a href="index.html" onclick="closeMob()">Главная</a>
+    <a href="index.html#dest" onclick="closeMob()">Направления</a>
+    <a href="blog.html" onclick="closeMob()">Блог</a>
+    <a href="index.html#contact" onclick="closeMob()" class="nav-cta" style="justify-content:center;border-radius:8px;">Консультация</a>
+  </div>
+</nav>
+
+<!-- BLOG HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="blog-hero-tag">✍️ Блог SEM Travel</div>
+    <h1 class="blog-hero-h1">Полезные советы<br/>и <em>новости туризма</em></h1>
+    <p class="blog-hero-sub">Рассказываем о направлениях, делимся лайфхаками и отвечаем на самые частые вопросы путешественников из Узбекистана.</p>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<div class="blog-filter">
+  <div class="blog-filter-inner">
+    <div class="filter-tabs" id="filter-tabs">
+      <button class="tab active" onclick="filterPosts('all',this)">Все статьи</button>
+      <button class="tab" onclick="filterPosts('visa',this)">Визы</button>
+      <button class="tab" onclick="filterPosts('turkey',this)">Турция</button>
+      <button class="tab" onclick="filterPosts('uae',this)">ОАЭ</button>
+      <button class="tab" onclick="filterPosts('europe',this)">Европа</button>
+      <button class="tab" onclick="filterPosts('tips',this)">Советы</button>
+    </div>
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input type="text" placeholder="Поиск по статьям..." oninput="searchPosts(this.value)" />
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="blog-main">
+  <div class="blog-inner">
+    <div class="blog-layout">
+
+      <!-- Posts column -->
+      <div>
+        <div class="featured-label">Главная статья</div>
+
+        <!-- FEATURED POST -->
+        <a href="blog-post.html" class="post-featured" id="featured-post">
+          <div class="post-featured-img" style="background-image:url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=800&q=80')">
+            <div class="post-featured-badge">⭐ Главная статья</div>
+          </div>
+          <div class="post-featured-body">
+            <div class="post-cat">Советы путешественникам</div>
+            <h2 class="post-h2">Как безопасно путешествовать из Ташкента: полный гид на 2025 год</h2>
+            <p class="post-excerpt">Всё, что нужно знать перед первым самостоятельным путешествием: документы, страховка, как не потеряться в аэропорту и почему цена в сумах — это важно.</p>
+            <div class="post-meta">
+              <span>12 марта 2025</span>
+              <span class="post-meta-dot"></span>
+              <span>10 мин чтения</span>
+              <span class="post-meta-dot"></span>
+              <span>👁 2400 просмотров</span>
+            </div>
+            <div class="post-read-btn">Читать статью →</div>
+          </div>
+        </a>
+
+        <!-- POSTS GRID -->
+        <div class="featured-label" style="margin-bottom:24px">Все статьи</div>
+        <div class="posts-grid" id="posts-grid">
+
+          <a href="blog-post.html" class="post-card" data-cat="visa">
+            <div class="post-card-img" style="position:relative">
+              <div class="post-card-img-inner" style="background:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&q=80') center/cover no-repeat;height:100%"></div>
+              <div class="post-card-cat">Визы</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-h">Шенгенская виза для граждан Узбекистана: пошаговая инструкция</div>
+              <div class="post-card-excerpt">Какие документы нужны, куда подавать, сколько ждать и как не получить отказ. Опыт Сардорбека.</div>
+              <div class="post-card-footer">
+                <span class="post-card-date">8 марта 2025</span>
+                <span class="post-card-read">Читать →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog-post.html" class="post-card" data-cat="turkey">
+            <div class="post-card-img" style="position:relative">
+              <div class="post-card-img-inner" style="background:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=500&q=80') center/cover no-repeat;height:100%"></div>
+              <div class="post-card-cat">Турция</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-h">Турция 2025: лучшие отели в Анталье для семей с детьми</div>
+              <div class="post-card-excerpt">Топ-7 отелей с аквапарком, детским клубом и удобным расположением. Цены и советы от наших менеджеров.</div>
+              <div class="post-card-footer">
+                <span class="post-card-date">3 марта 2025</span>
+                <span class="post-card-read">Читать →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog-post.html" class="post-card" data-cat="uae">
+            <div class="post-card-img" style="position:relative">
+              <div class="post-card-img-inner" style="background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=80') center/cover no-repeat;height:100%"></div>
+              <div class="post-card-cat">ОАЭ</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-h">Дубай за 5 дней: маршрут для тех, кто едет впервые</div>
+              <div class="post-card-excerpt">Что посмотреть, где поесть, как добраться дешевле и что обязательно купить. Личный опыт команды SEM Travel.</div>
+              <div class="post-card-footer">
+                <span class="post-card-date">27 февраля 2025</span>
+                <span class="post-card-read">Читать →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog-post.html" class="post-card" data-cat="tips">
+            <div class="post-card-img" style="position:relative">
+              <div class="post-card-img-inner" style="background:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=500&q=80') center/cover no-repeat;height:100%"></div>
+              <div class="post-card-cat">Советы</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-h">5 ошибок при бронировании тура, которые стоят дорого</div>
+              <div class="post-card-excerpt">Почему нельзя покупать туры на сайтах с нефиксированной ценой и как защитить своё бронирование.</div>
+              <div class="post-card-footer">
+                <span class="post-card-date">20 февраля 2025</span>
+                <span class="post-card-read">Читать →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog-post.html" class="post-card" data-cat="europe">
+            <div class="post-card-img" style="position:relative">
+              <div class="post-card-img-inner" style="background:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=500&q=80') center/cover no-repeat;height:100%"></div>
+              <div class="post-card-cat">Европа</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-h">Париж — Рим — Барселона: как объехать 3 страны за одну поездку</div>
+              <div class="post-card-excerpt">Мультивизовый маршрут по Европе: как спланировать, сколько стоит и какие отели выбрать.</div>
+              <div class="post-card-footer">
+                <span class="post-card-date">14 февраля 2025</span>
+                <span class="post-card-read">Читать →</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="blog-post.html" class="post-card" data-cat="visa">
+            <div class="post-card-img" style="position:relative">
+              <div class="post-card-img-inner" style="background:url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=80') center/cover no-repeat;height:100%"></div>
+              <div class="post-card-cat">Визы</div>
+            </div>
+            <div class="post-card-body">
+              <div class="post-card-h">Американская виза B1/B2: реальный опыт подачи из Ташкента</div>
+              <div class="post-card-excerpt">Подробный разбор: собеседование, документы, частые причины отказа и как их избежать.</div>
+              <div class="post-card-footer">
+                <span class="post-card-date">6 февраля 2025</span>
+                <span class="post-card-read">Читать →</span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn dots">...</button>
+          <button class="page-btn">8</button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="sidebar-card">
+          <div class="sidebar-h">Категории</div>
+          <div class="sidebar-cats">
+            <div class="sidebar-cat" onclick="filterPosts('visa',null)"><span>📋 Визы</span><span class="sidebar-cat-num">12</span></div>
+            <div class="sidebar-cat" onclick="filterPosts('turkey',null)"><span>🇹🇷 Турция</span><span class="sidebar-cat-num">8</span></div>
+            <div class="sidebar-cat" onclick="filterPosts('uae',null)"><span>🇦🇪 ОАЭ</span><span class="sidebar-cat-num">6</span></div>
+            <div class="sidebar-cat" onclick="filterPosts('europe',null)"><span>🇪🇺 Европа</span><span class="sidebar-cat-num">9</span></div>
+            <div class="sidebar-cat" onclick="filterPosts('tips',null)"><span>💡 Советы</span><span class="sidebar-cat-num">15</span></div>
+            <div class="sidebar-cat" onclick="filterPosts('all',null)"><span>🌍 Все статьи</span><span class="sidebar-cat-num">50</span></div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-h">Популярное</div>
+          <div class="popular-list">
+            <a href="blog-post.html" class="popular-item">
+              <div class="popular-thumb" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&q=70')"></div>
+              <div>
+                <div class="popular-title">Шенгенская виза: пошаговая инструкция</div>
+                <div class="popular-date">8 марта 2025 · 👁 3200</div>
+              </div>
+            </a>
+            <a href="blog-post.html" class="popular-item">
+              <div class="popular-thumb" style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=200&q=70')"></div>
+              <div>
+                <div class="popular-title">Топ-7 отелей в Анталье 2025</div>
+                <div class="popular-date">3 марта 2025 · 👁 2800</div>
+              </div>
+            </a>
+            <a href="blog-post.html" class="popular-item">
+              <div class="popular-thumb" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=200&q=70')"></div>
+              <div>
+                <div class="popular-title">Дубай за 5 дней: маршрут</div>
+                <div class="popular-date">27 февр. 2025 · 👁 2100</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-cta">
+          <div class="sidebar-cta-emoji">✈️</div>
+          <div class="sidebar-cta-title">Нужна консультация?</div>
+          <div class="sidebar-cta-sub">Подберём тур под ваш бюджет за 15 минут</div>
+          <a href="index.html#contact" class="sidebar-cta-btn">Оставить заявку</a>
+          <a href="https://t.me/semtravel" target="_blank" class="sidebar-cta-btn2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:inline;vertical-align:-2px;margin-right:4px"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.014 9.49c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.28l-2.95-.924c-.64-.203-.654-.64.136-.949l11.52-4.44c.533-.194 1.001.13.596 1.282z"/></svg>
+            Написать в Telegram
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">SEM<span>Travel</span></div>
+        <p class="foot-desc">Надёжное туристическое агентство в Ташкенте. Работаем с 2009 года.</p>
+      </div>
+      <div>
+        <div class="foot-h">Блог</div>
+        <div class="foot-links">
+          <a href="blog.html">Все статьи</a>
+          <a href="#">Визы</a>
+          <a href="#">Направления</a>
+          <a href="#">Советы</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Услуги</div>
+        <div class="foot-links">
+          <a href="index.html#services">Подбор туров</a>
+          <a href="index.html#services">Авиабилеты</a>
+          <a href="index.html#services">Визы</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Контакты</div>
+        <div class="foot-links">
+          <a>📍 Ташкент</a>
+          <a href="tel:+998901234567">📞 +998 90 123 45 67</a>
+          <a href="https://t.me/semtravel" target="_blank">💬 @semtravel</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2025 SEM Travel. Все права защищены.</span>
+      <span style="color:var(--gold);letter-spacing:3px">★★★★★</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://t.me/semtravel" target="_blank" class="float-tg">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.014 9.49c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.28l-2.95-.924c-.64-.203-.654-.64.136-.949l11.52-4.44c.533-.194 1.001.13.596 1.282z"/></svg>
+</a>
+<div class="mob-cta">
+  <a href="tel:+998901234567" class="mob-cta-sec">📞 Позвонить</a>
+  <a href="https://t.me/semtravel" target="_blank" class="mob-cta-main">Telegram</a>
+</div>
+
+<script>
+function toggleMob(){document.getElementById('mob-menu').classList.toggle('open')}
+function closeMob(){document.getElementById('mob-menu').classList.remove('open')}
+
+function filterPosts(cat, btn){
+  // Update active tab
+  if(btn){
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+  // Filter cards
+  document.querySelectorAll('.post-card').forEach(card=>{
+    if(cat==='all' || card.dataset.cat===cat){
+      card.style.display='block';
+    } else {
+      card.style.display='none';
+    }
+  });
+  // Show/hide featured
+  var featured=document.getElementById('featured-post');
+  if(featured) featured.style.display=(cat==='all'||cat==='tips')?'grid':'none';
+}
+
+function searchPosts(val){
+  var v=val.toLowerCase().trim();
+  document.querySelectorAll('.post-card').forEach(card=>{
+    var text=(card.querySelector('.post-card-h').textContent+card.querySelector('.post-card-excerpt').textContent).toLowerCase();
+    card.style.display=(v===''||text.includes(v))?'block':'none';
+  });
+}
+</script>
+</body>
+</html>

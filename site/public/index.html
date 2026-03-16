@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEM Travel — Туры из Ташкента. Цена в сумах.</title>
+  <meta name="description" content="Подберём тур в Турцию, ОАЭ или Европу. Цена фиксируется в сумах. Поддержка 24/7 от Ташкента до отеля." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RESET & VARS ━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#0F2552;
+  --blue-mid:#1B3A6B;
+  --blue-light:#EEF3FF;
+  --gold:#C9A84C;
+  --gold-light:#FBF3DC;
+  --red:#E53E3E;
+  --white:#FFFFFF;
+  --gray:#F7F8FA;
+  --border:#E8EAF0;
+  --text:#0F172A;
+  --muted:#64748B;
+  --radius:12px;
+  --shadow:0 4px 24px rgba(15,37,82,0.10);
+  --shadow-lg:0 12px 48px rgba(15,37,82,0.16);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+input,select,textarea,button{font-family:inherit}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TOP BAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.topbar{
+  background:var(--blue);color:#fff;
+  font-size:13px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;gap:32px;
+  padding:9px 24px;flex-wrap:wrap;
+}
+.topbar a{color:#fff;display:inline-flex;align-items:center;gap:6px;opacity:.9;transition:opacity .2s}
+.topbar a:hover{opacity:1}
+.topbar-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+nav{
+  position:sticky;top:0;z-index:99;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;justify-content:space-between;height:64px;
+}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo svg{flex-shrink:0}
+.nav-logo-text{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--blue)}
+.nav-logo-text span{color:var(--gold)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{
+  background:var(--gold);color:#fff;
+  padding:10px 22px;border-radius:8px;
+  font-size:14px;font-weight:700;
+  display:inline-flex;align-items:center;gap:8px;
+  transition:background .2s,transform .15s;
+}
+.nav-cta:hover{background:#b8922e;transform:translateY(-1px)}
+#burger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px}
+#burger div{width:22px;height:2px;background:var(--text);border-radius:1px}
+#mob-menu{display:none;background:#fff;border-top:1px solid var(--border);padding:20px 24px}
+#mob-menu.open{display:flex;flex-direction:column;gap:16px}
+#mob-menu a{font-size:15px;font-weight:500;color:var(--text)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HERO ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.hero{
+  position:relative;min-height:92vh;
+  display:flex;align-items:center;overflow:hidden;
+  background:#0b1e3d;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=85') center/cover no-repeat;
+  opacity:.35;
+}
+.hero-gradient{
+  position:absolute;inset:0;
+  background:linear-gradient(110deg,rgba(15,37,82,.95) 0%,rgba(15,37,82,.75) 50%,rgba(15,37,82,.4) 100%);
+}
+.hero-inner{
+  position:relative;z-index:1;
+  max-width:1200px;margin:0 auto;padding:80px 24px 60px;
+  display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;width:100%;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);
+  color:#F5D98A;font-size:12px;font-weight:600;letter-spacing:.06em;
+  padding:6px 14px;border-radius:20px;margin-bottom:24px;
+}
+.hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 1.8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.4rem,4.5vw,3.8rem);
+  font-weight:800;line-height:1.1;color:#fff;
+  margin-bottom:20px;
+}
+.hero-h1 em{color:#F5D98A;font-style:italic}
+.hero-p{font-size:17px;color:rgba(255,255,255,.78);line-height:1.75;margin-bottom:32px;max-width:480px}
+.hero-trust{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.trust-pill{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:rgba(255,255,255,.85);font-size:13px;font-weight:500;
+  padding:7px 14px;border-radius:20px;
+}
+.trust-pill-check{color:var(--gold);font-weight:700}
+.hero-nums{display:flex;gap:32px;margin-top:40px;padding-top:36px;border-top:1px solid rgba(255,255,255,.12)}
+.hero-num-val{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;color:#F5D98A;line-height:1;margin-bottom:4px
+}
+.hero-num-label{font-size:12px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em}
+
+/* Hero form card */
+.hero-form-card{
+  background:#fff;border-radius:20px;
+  padding:36px 32px;
+  box-shadow:0 24px 64px rgba(0,0,0,.35);
+}
+.hero-form-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;color:var(--blue);
+  margin-bottom:6px;
+}
+.hero-form-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.5}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.fld input,.fld select{
+  width:100%;padding:13px 14px;
+  border:1.5px solid var(--border);border-radius:8px;
+  font-size:14px;color:var(--text);background:#fff;
+  outline:none;transition:border-color .2s;
+}
+.fld input:focus,.fld select:focus{border-color:var(--gold)}
+.fld select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748B' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.btn-submit{
+  width:100%;padding:15px;border-radius:10px;
+  background:var(--gold);color:#fff;
+  font-size:15px;font-weight:700;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .2s,transform .15s;margin-top:4px;
+}
+.btn-submit:hover{background:#b8922e;transform:translateY(-1px)}
+.btn-tg{
+  width:100%;padding:13px;border-radius:10px;
+  background:var(--blue-light);color:var(--blue);
+  font-size:14px;font-weight:700;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .2s;margin-top:10px;
+  text-decoration:none;
+}
+.btn-tg:hover{background:#dde4f5}
+.form-note{text-align:center;font-size:11px;color:var(--muted);margin-top:12px;line-height:1.5}
+.form-success{display:none;text-align:center;padding:20px 0}
+.form-success-icon{font-size:3rem;margin-bottom:12px}
+.form-success h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--blue);margin-bottom:8px}
+.form-success p{font-size:14px;color:var(--muted);line-height:1.6}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━ SOCIAL PROOF BAR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.proof-bar{
+  background:var(--blue);color:#fff;
+  display:flex;align-items:stretch;justify-content:center;
+  flex-wrap:wrap;
+}
+.proof-item{
+  display:flex;align-items:center;gap:14px;
+  padding:24px 40px;border-right:1px solid rgba(255,255,255,.1);
+  flex:1;min-width:180px;
+}
+.proof-item:last-child{border-right:none}
+.proof-icon{font-size:22px}
+.proof-val{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--gold);line-height:1}
+.proof-label{font-size:12px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ HOW IT WORKS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.how{background:var(--gray);padding:88px 24px}
+.sec-inner{max-width:1200px;margin:0 auto}
+.sec-tag{
+  font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:14px;
+}
+.sec-tag::before{content:'';display:block;width:28px;height:2px;background:var(--gold)}
+.sec-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,3.5vw,3rem);font-weight:700;
+  color:var(--blue);margin-bottom:12px;line-height:1.15;
+}
+.sec-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:56px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.steps::before{
+  content:'';position:absolute;top:44px;left:calc(16.67% + 24px);right:calc(16.67% + 24px);
+  height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 8px,transparent 8px,transparent 16px);
+  z-index:0;
+}
+.step{padding:0 32px 0 0;position:relative;z-index:1}
+.step-num{
+  width:48px;height:48px;border-radius:50%;
+  background:var(--gold);color:#fff;
+  font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;box-shadow:0 4px 16px rgba(201,168,76,.4);
+  flex-shrink:0;
+}
+.step-title{font-size:18px;font-weight:700;color:var(--blue);margin-bottom:10px}
+.step-desc{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ DESTINATIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.dest{padding:88px 24px}
+.dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dest-card{
+  border-radius:16px;overflow:hidden;
+  box-shadow:var(--shadow);position:relative;
+  cursor:pointer;transition:transform .3s,box-shadow .3s;
+}
+.dest-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.dest-img{
+  height:220px;background-size:cover;background-position:center;
+  transition:transform .4s;
+}
+.dest-card:hover .dest-img{transform:scale(1.05)}
+.dest-img-wrap{overflow:hidden}
+.dest-body{padding:22px 20px}
+.dest-flag{font-size:22px;margin-bottom:8px}
+.dest-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--blue);margin-bottom:4px}
+.dest-sub{font-size:13px;color:var(--muted);margin-bottom:14px}
+.dest-row{display:flex;align-items:center;justify-content:space-between}
+.dest-price{font-size:15px;font-weight:700;color:var(--blue)}
+.dest-price span{font-size:12px;font-weight:400;color:var(--muted)}
+.dest-badge{
+  background:var(--gold-light);color:var(--gold);
+  font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;
+}
+.dest-cta{
+  display:block;width:100%;padding:12px;
+  background:var(--blue-light);color:var(--blue);
+  text-align:center;font-size:13px;font-weight:700;
+  border-radius:8px;margin-top:14px;transition:background .2s;
+}
+.dest-cta:hover{background:#dde4f5}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ SERVICES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.services{padding:88px 24px;background:var(--gray)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.svc-card{
+  background:#fff;border-radius:16px;padding:36px 28px;
+  box-shadow:var(--shadow);
+  border-top:3px solid var(--gold);
+  transition:transform .3s,box-shadow .3s;
+}
+.svc-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.svc-icon{
+  width:52px;height:52px;border-radius:12px;
+  background:var(--blue-light);color:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;margin-bottom:20px;
+}
+.svc-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--blue);margin-bottom:10px}
+.svc-desc{font-size:14px;color:var(--muted);line-height:1.8}
+.svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.svc-tag{background:var(--gold-light);color:#8a6520;font-size:11px;font-weight:600;padding:3px 10px;border-radius:12px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TEAM ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.team{padding:88px 24px}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.team-card{
+  background:#fff;border-radius:16px;overflow:hidden;
+  box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;text-align:center;
+}
+.team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.team-banner{height:80px;background:var(--blue);position:relative}
+.team-ava{
+  width:80px;height:80px;border-radius:50%;
+  background:var(--blue-mid);border:4px solid #fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:#fff;
+  position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);
+  box-shadow:0 4px 16px rgba(0,0,0,.15);
+}
+.team-body{padding:52px 24px 32px}
+.team-exp{background:var(--gold-light);color:var(--gold);font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px;display:inline-block;margin-bottom:10px}
+.team-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--blue);margin-bottom:4px}
+.team-role{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:14px}
+.team-desc{font-size:13px;color:var(--muted);line-height:1.75}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ TESTIMONIALS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.reviews{padding:88px 24px;background:var(--gray)}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rev-card{
+  background:#fff;border-radius:16px;padding:32px 28px;
+  box-shadow:var(--shadow);position:relative;
+  transition:transform .3s;
+}
+.rev-card:hover{transform:translateY(-4px)}
+.rev-quote{
+  position:absolute;top:20px;right:24px;
+  font-size:56px;font-family:'Playfair Display',serif;
+  color:rgba(201,168,76,.15);line-height:1;
+}
+.rev-stars{color:var(--gold);font-size:18px;letter-spacing:2px;margin-bottom:16px}
+.rev-text{font-size:15px;line-height:1.8;color:#334155;margin-bottom:24px}
+.rev-divider{height:1px;background:var(--border);margin-bottom:18px}
+.rev-author{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.rev-ava{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--blue);display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;font-size:15px;flex-shrink:0;
+}
+.rev-name{font-size:14px;font-weight:700;color:var(--text)}
+.rev-city{font-size:12px;color:var(--muted)}
+.rev-tour{background:var(--gold-light);color:#8a6520;font-size:11px;font-weight:700;padding:4px 10px;border-radius:12px}
+.rev-total{
+  display:flex;align-items:center;gap:20px;
+  background:#fff;border-radius:16px;padding:20px 32px;
+  box-shadow:var(--shadow);margin-top:40px;justify-content:center;flex-wrap:wrap;
+}
+.rev-total-big{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--blue)}
+.rev-divider-v{width:1px;height:40px;background:var(--border)}
+.rev-total-stars{font-size:24px;color:var(--gold);letter-spacing:3px}
+.rev-total-label{font-size:13px;color:var(--muted)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ CONTACT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.contact{padding:88px 24px}
+.contact-grid{display:grid;grid-template-columns:1fr 480px;gap:72px;align-items:start}
+.contact-why{display:flex;flex-direction:column;gap:14px;margin:32px 0}
+.why-item{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:18px 20px;border:1px solid var(--border);border-radius:12px;
+  transition:border-color .2s,box-shadow .2s;
+}
+.why-item:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,168,76,.12)}
+.why-emoji{font-size:20px;flex-shrink:0;margin-top:2px}
+.why-text{font-size:14px;color:var(--muted);line-height:1.6}
+.why-text strong{color:var(--text)}
+.contact-info{background:var(--gray);border-radius:12px;padding:22px 20px}
+.contact-info-title{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.contact-info a,.contact-info p{font-size:14px;color:var(--muted);display:block;margin-bottom:8px;transition:color .2s}
+.contact-info a:hover{color:var(--blue)}
+.contact-form-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:20px;padding:40px;
+  box-shadow:var(--shadow-lg);
+}
+.contact-form-tag{
+  background:var(--gold);color:#fff;
+  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 12px;border-radius:6px;display:inline-block;margin-bottom:16px;
+}
+.contact-form-h{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--blue);margin-bottom:6px}
+.contact-form-sub{font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.5}
+.form-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+footer{background:var(--blue);color:#fff;padding:60px 24px 32px}
+.foot-inner{max-width:1200px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.foot-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.foot-logo span{color:var(--gold)}
+.foot-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
+.foot-h{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.foot-links{display:flex;flex-direction:column;gap:10px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.45);transition:color .2s}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.3)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ FLOATING ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.float-tg{
+  position:fixed;bottom:28px;right:28px;z-index:200;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--gold);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(201,168,76,.5);
+  transition:transform .2s,box-shadow .2s;
+  text-decoration:none;
+}
+.float-tg:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(201,168,76,.65)}
+.float-tg svg{width:26px;height:26px}
+
+/* Mobile sticky CTA */
+.mob-cta{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:199;
+  background:#fff;border-top:1px solid var(--border);
+  padding:12px 20px;gap:10px;
+}
+.mob-cta a{
+  flex:1;padding:14px;border-radius:10px;
+  text-align:center;font-size:14px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.mob-cta-main{background:var(--gold);color:#fff}
+.mob-cta-sec{background:var(--blue-light);color:var(--blue)}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ RESPONSIVE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .hero-form-card{max-width:480px}
+  .steps::before{display:none}
+  .steps{grid-template-columns:1fr}
+  .step{padding:0 0 32px;border-bottom:1px solid var(--border)}
+  .step:last-child{border-bottom:none;padding-bottom:0}
+  .dest-grid,.svc-grid,.team-grid,.rev-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .topbar{font-size:12px;gap:16px}
+  .nav-links,.nav-cta{display:none}
+  #burger{display:flex}
+  .dest-grid,.svc-grid,.team-grid,.rev-grid{grid-template-columns:1fr}
+  .proof-bar{flex-direction:column}
+  .proof-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .proof-item:last-child{border-bottom:none}
+  .foot-top{grid-template-columns:1fr}
+  .float-tg{display:none}
+  .mob-cta{display:flex}
+  body{padding-bottom:80px}
+  .hero-nums{flex-wrap:wrap;gap:20px}
+  .form-row2{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TOP BAR ═══════════════════════════════════════════════════════════════ -->
+<div class="topbar">
+  <span style="display:flex;align-items:center;gap:8px">
+    <span class="topbar-dot"></span>
+    Работаем ежедневно · 09:00–21:00 · Ташкент
+  </span>
+  <a href="tel:+998901234567">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+    +998 90 123 45 67
+  </a>
+  <a href="https://t.me/semtravel" target="_blank">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.014 9.49c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.28l-2.95-.924c-.64-.203-.654-.64.136-.949l11.52-4.44c.533-.194 1.001.13.596 1.282z"/></svg>
+    @semtravel
+  </a>
+</div>
+
+<!-- ══ NAV ════════════════════════════════════════════════════════════════════ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <svg width="34" height="34" viewBox="0 0 36 36">
+        <circle cx="18" cy="18" r="18" fill="#EEF3FF"/>
+        <g transform="translate(18,18)">
+          <path d="M0-9L1.5-2L8-5L3 0L8 5L1.5 2L0 9L-1.5 2L-8 5L-3 0L-8-5L-1.5-2Z" fill="#E87040" opacity=".9"/>
+          <circle cx="0" cy="0" r="2.5" fill="#C9A84C"/>
+        </g>
+      </svg>
+      <span class="nav-logo-text">SEM<span>Travel</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#how">Как работаем</a>
+      <a href="#dest">Направления</a>
+      <a href="#team">Команда</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="blog.html">Блог</a>
+    </div>
+    <a href="#contact" class="nav-cta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      Получить консультацию
+    </a>
+    <button id="burger" onclick="toggleMob()">
+      <div></div><div></div><div></div>
+    </button>
+  </div>
+  <div id="mob-menu">
+    <a href="#how" onclick="closeMob()">Как работаем</a>
+    <a href="#dest" onclick="closeMob()">Направления</a>
+    <a href="#team" onclick="closeMob()">Команда</a>
+    <a href="#reviews" onclick="closeMob()">Отзывы</a>
+    <a href="#contact" onclick="closeMob()" class="nav-cta" style="justify-content:center;border-radius:8px;">Получить консультацию</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ═══════════════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-img"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-inner">
+
+    <!-- Left: Headline -->
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        15+ лет опыта · Ташкент
+      </div>
+      <h1 class="hero-h1">
+        Боитесь застрять<br/>
+        в аэропорту?<br/>
+        <em>Мы рядом 24/7.</em>
+      </h1>
+      <p class="hero-p">
+        Фиксируем цену в сумах с первого дня. Поддержка на каждом шаге — от офиса в Ташкенте до дверей вашего отеля.
+      </p>
+      <div class="hero-trust">
+        <span class="trust-pill"><span class="trust-pill-check">✓</span> Цена в сумах</span>
+        <span class="trust-pill"><span class="trust-pill-check">✓</span> Поддержка 24/7</span>
+        <span class="trust-pill"><span class="trust-pill-check">✓</span> Встретим в аэропорту</span>
+        <span class="trust-pill"><span class="trust-pill-check">✓</span> Виза под ключ</span>
+      </div>
+      <div class="hero-nums">
+        <div>
+          <div class="hero-num-val">15+</div>
+          <div class="hero-num-label">лет опыта</div>
+        </div>
+        <div>
+          <div class="hero-num-val">5000+</div>
+          <div class="hero-num-label">клиентов</div>
+        </div>
+        <div>
+          <div class="hero-num-val">50+</div>
+          <div class="hero-num-label">направлений</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="hero-form-card">
+      <div id="hero-form-wrap">
+        <div class="hero-form-title">Подобрать тур</div>
+        <div class="hero-form-sub">Оставьте номер — перезвоним за 15 минут и подберём лучший вариант</div>
+        <form onsubmit="submitHero(event)">
+          <div class="fld">
+            <label>Ваше имя</label>
+            <input type="text" placeholder="Алишер" required />
+          </div>
+          <div class="fld">
+            <label>Телефон *</label>
+            <input type="tel" placeholder="+998 90 000 00 00" required />
+          </div>
+          <div class="fld">
+            <label>Направление</label>
+            <select>
+              <option value="">Куда хотите?</option>
+              <option>🇹🇷 Турция</option>
+              <option>🇦🇪 ОАЭ (Дубай)</option>
+              <option>🇪🇺 Европа</option>
+              <option>🌍 Другое</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            Получить консультацию
+          </button>
+          <a href="https://t.me/semtravel" target="_blank" class="btn-tg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.014 9.49c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.28l-2.95-.924c-.64-.203-.654-.64.136-.949l11.52-4.44c.533-.194 1.001.13.596 1.282z"/></svg>
+            Написать в Telegram
+          </a>
+          <p class="form-note">Никакого спама. Только консультация по вашему запросу.</p>
+        </form>
+      </div>
+      <div class="form-success" id="hero-success">
+        <div class="form-success-icon">🎉</div>
+        <h3>Заявка принята!</h3>
+        <p>Перезвоним в течение 15 минут и подберём идеальный вариант для вас.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SOCIAL PROOF BAR ════════════════════════════════════════════════════ -->
+<div class="proof-bar">
+  <div class="proof-item">
+    <span class="proof-icon">🏆</span>
+    <div>
+      <div class="proof-val">15+</div>
+      <div class="proof-label">Лет на рынке</div>
+    </div>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">😊</span>
+    <div>
+      <div class="proof-val">5000+</div>
+      <div class="proof-label">Довольных клиентов</div>
+    </div>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">🌍</span>
+    <div>
+      <div class="proof-val">50+</div>
+      <div class="proof-label">Направлений</div>
+    </div>
+  </div>
+  <div class="proof-item">
+    <span class="proof-icon">⭐</span>
+    <div>
+      <div class="proof-val">5.0</div>
+      <div class="proof-label">Рейтинг клиентов</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HOW IT WORKS ═══════════════════════════════════════════════════════════ -->
+<section class="how" id="how">
+  <div class="sec-inner">
+    <div style="max-width:640px">
+      <div class="sec-tag">Как мы работаем</div>
+      <h2 class="sec-h2">3 шага до<br/>вашей мечты</h2>
+      <p class="sec-sub">Никаких очередей и стресса. Всё решаем удалённо — через Telegram или звонок.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Оставляете заявку</div>
+        <div class="step-desc">Пишете в Telegram или оставляете номер. Мы перезваниваем в течение 15 минут и уточняем пожелания: куда, когда, сколько человек и бюджет.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Мы подбираем варианты</div>
+        <div class="step-desc">Анализируем десятки предложений и отправляем 3–5 лучших. Вы выбираете. Цена фиксируется в сумах — никаких изменений после оплаты.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Летите без забот</div>
+        <div class="step-desc">Берём на себя билеты, отель, трансфер и визу. В пути — мы на связи 24/7. Если что-то пойдёт не так — решим немедленно.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DESTINATIONS ════════════════════════════════════════════════════════ -->
+<section class="dest" id="dest">
+  <div class="sec-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:48px">
+      <div>
+        <div class="sec-tag">Куда летим</div>
+        <h2 class="sec-h2">Популярные<br/>направления</h2>
+      </div>
+      <a href="#contact" style="font-size:14px;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:6px;">
+        Все направления →
+      </a>
+    </div>
+    <div class="dest-grid">
+
+      <div class="dest-card">
+        <div class="dest-img-wrap">
+          <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80')"></div>
+        </div>
+        <div class="dest-body">
+          <div class="dest-flag">🇹🇷</div>
+          <div class="dest-name">Турция</div>
+          <div class="dest-sub">Анталья, Стамбул, Бодрум</div>
+          <div class="dest-row">
+            <div class="dest-price">от $850 <span>/ чел.</span></div>
+            <div class="dest-badge">All Inclusive</div>
+          </div>
+          <a href="#contact" class="dest-cta" onclick="setDest('Турция')">Узнать цену в сумах →</a>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-img-wrap">
+          <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80')"></div>
+        </div>
+        <div class="dest-body">
+          <div class="dest-flag">🇦🇪</div>
+          <div class="dest-name">ОАЭ — Дубай</div>
+          <div class="dest-sub">Бурдж Халифа, пляжи, шопинг</div>
+          <div class="dest-row">
+            <div class="dest-price">от $1200 <span>/ чел.</span></div>
+            <div class="dest-badge">Завтраки</div>
+          </div>
+          <a href="#contact" class="dest-cta" onclick="setDest('ОАЭ (Дубай)')">Узнать цену в сумах →</a>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <div class="dest-img-wrap">
+          <div class="dest-img" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80')"></div>
+        </div>
+        <div class="dest-body">
+          <div class="dest-flag">🇪🇺</div>
+          <div class="dest-name">Европа</div>
+          <div class="dest-sub">Париж, Рим, Барселона, Вена</div>
+          <div class="dest-row">
+            <div class="dest-price">от $1500 <span>/ чел.</span></div>
+            <div class="dest-badge">Шенген</div>
+          </div>
+          <a href="#contact" class="dest-cta" onclick="setDest('Европа')">Узнать цену в сумах →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ════════════════════════════════════════════════════════════ -->
+<section class="services" id="services">
+  <div class="sec-inner">
+    <div style="max-width:560px;margin-bottom:52px">
+      <div class="sec-tag">Наши услуги</div>
+      <h2 class="sec-h2">Всё под ключ —<br/>от выбора до отеля</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-icon">✈️</div>
+        <div class="svc-title">Подбор идеального тура</div>
+        <div class="svc-desc">Персональный подбор туров в Турцию, ОАЭ, Европу и другие направления. Анализируем десятки вариантов — лучшее соотношение цены, качества и локации.</div>
+        <div class="svc-tags"><span class="svc-tag">Турция</span><span class="svc-tag">ОАЭ</span><span class="svc-tag">Европа</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">🏨</div>
+        <div class="svc-title">Авиабилеты и отели</div>
+        <div class="svc-desc">Быстрое оформление авиабилетов и проживания по всему миру. Удобные рейсы, выгодные тарифы и проверенные отели — без лишних хлопот.</div>
+        <div class="svc-tags"><span class="svc-tag">Прямые рейсы</span><span class="svc-tag">Трансфер</span><span class="svc-tag">5★ отели</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon">📋</div>
+        <div class="svc-title">Визовая поддержка</div>
+        <div class="svc-desc">Профессиональная консультация при оформлении виз. Подготовка документов и сопровождение на всех этапах шенгенских, американских и британских виз.</div>
+        <div class="svc-tags"><span class="svc-tag">Шенген</span><span class="svc-tag">США</span><span class="svc-tag">Великобритания</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TEAM ════════════════════════════════════════════════════════════════ -->
+<section class="team" id="team">
+  <div class="sec-inner">
+    <div style="max-width:560px;margin-bottom:52px">
+      <div class="sec-tag">Люди, которым доверяют</div>
+      <h2 class="sec-h2">Наша команда</h2>
+      <p style="font-size:16px;color:var(--muted);line-height:1.7;margin-top:12px">Профессионалы с реальным опытом. Каждый специализируется на своём направлении.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-banner"><div class="team-ava">ЭЛ</div></div>
+        <div class="team-body">
+          <div class="team-exp">15+ лет</div>
+          <div class="team-name">Элербек</div>
+          <div class="team-role">Директор компании</div>
+          <div class="team-desc">Более 15 лет опыта в туризме. Организовал тысячи путешествий. Помогает подобрать оптимальные маршруты и проверенные отели по всему миру.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-banner" style="background:#1E4D8C"><div class="team-ava" style="background:#1E4D8C">ДВ</div></div>
+        <div class="team-body">
+          <div class="team-exp">Эксперт по турам</div>
+          <div class="team-name">Давронбек</div>
+          <div class="team-role">Старший менеджер</div>
+          <div class="team-desc">Специализируется на подборе туров и отелей с учётом пожеланий клиента. Найдёт лучший вариант для семьи, пары или группы.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-banner" style="background:#C9A84C"><div class="team-ava" style="background:#C9A84C">СД</div></div>
+        <div class="team-body">
+          <div class="team-exp">Визовый специалист</div>
+          <div class="team-name">Сардорбек</div>
+          <div class="team-role">Визы и документы</div>
+          <div class="team-desc">Сопровождает на всех этапах оформления виз. Подготовка документов и помощь при подаче на шенгенские, американские и британские визы.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ════════════════════════════════════════════════════════ -->
+<section class="reviews" id="reviews">
+  <div class="sec-inner">
+    <div style="max-width:560px;margin-bottom:52px">
+      <div class="sec-tag">Реальные истории</div>
+      <h2 class="sec-h2">Что говорят<br/>клиенты</h2>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-quote">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">«Боялась лететь одна с детьми, но команда SEM Travel была на связи 24/7. Встретили в аэропорту, помогли с отелем. Всё идеально!»</div>
+        <div class="rev-divider"></div>
+        <div class="rev-author">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="rev-ava">Н</div>
+            <div>
+              <div class="rev-name">Нилуфар Х.</div>
+              <div class="rev-city">Ташкент</div>
+            </div>
+          </div>
+          <div class="rev-tour">Турция</div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-quote">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">«Цена зафиксирована в сумах — никаких сюрпризов с курсом. Виза оформлена за 5 дней. Рекомендую всем!»</div>
+        <div class="rev-divider"></div>
+        <div class="rev-author">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="rev-ava">С</div>
+            <div>
+              <div class="rev-name">Санжар М.</div>
+              <div class="rev-city">Ташкент</div>
+            </div>
+          </div>
+          <div class="rev-tour">Шенген + Европа</div>
+        </div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-quote">"</div>
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">«Давронбек подобрал идеальный тур в ОАЭ для нашей семьи. Отель, перелёт, трансфер — всё включено. Больше никуда не обращаемся!»</div>
+        <div class="rev-divider"></div>
+        <div class="rev-author">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="rev-ava">Г</div>
+            <div>
+              <div class="rev-name">Гульнора Р.</div>
+              <div class="rev-city">Ташкент</div>
+            </div>
+          </div>
+          <div class="rev-tour">ОАЭ, Дубай</div>
+        </div>
+      </div>
+    </div>
+    <div class="rev-total">
+      <div class="rev-total-big">5.0</div>
+      <div class="rev-total-stars">★★★★★</div>
+      <div class="rev-divider-v"></div>
+      <div class="rev-total-label">Средняя оценка от 5000+ клиентов</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════════════════════ -->
+<!-- ══ BLOG PREVIEW ══════════════════════════════════════════════════════════ -->
+<section style="padding:88px 24px;background:var(--gray)" id="blog">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:48px">
+      <div>
+        <div style="font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:8px;margin-bottom:14px"><span style="display:block;width:28px;height:2px;background:var(--gold)"></span>Полезно знать</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--blue);line-height:1.15">Советы<br/>путешественникам</h2>
+      </div>
+      <a href="blog.html" style="font-size:14px;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:6px;white-space:nowrap">Все статьи →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+
+      <a href="blog-post.html" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(15,37,82,.09);transition:transform .3s;display:block;text-decoration:none;color:inherit" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="height:200px;background:url('https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=500&q=75') center/cover no-repeat;position:relative">
+          <span style="position:absolute;bottom:14px;left:14px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:5px">Советы</span>
+        </div>
+        <div style="padding:22px">
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--blue);margin-bottom:8px;line-height:1.35">Как безопасно путешествовать из Ташкента: полный гид</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px">Документы, страховка, аэропорт — всё что нужно знать перед первой поездкой.</div>
+          <div style="display:flex;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">
+            <span>12 марта 2025</span><span style="font-weight:700;color:var(--gold)">Читать →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(15,37,82,.09);transition:transform .3s;display:block;text-decoration:none;color:inherit" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="height:200px;background:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=500&q=75') center/cover no-repeat;position:relative">
+          <span style="position:absolute;bottom:14px;left:14px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:5px">Визы</span>
+        </div>
+        <div style="padding:22px">
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--blue);margin-bottom:8px;line-height:1.35">Шенгенская виза из Ташкента: пошаговая инструкция</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px">Какие документы собрать, куда подавать и как не получить отказ.</div>
+          <div style="display:flex;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">
+            <span>8 марта 2025</span><span style="font-weight:700;color:var(--gold)">Читать →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-post.html" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(15,37,82,.09);transition:transform .3s;display:block;text-decoration:none;color:inherit" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="height:200px;background:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&q=75') center/cover no-repeat;position:relative">
+          <span style="position:absolute;bottom:14px;left:14px;background:var(--gold);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:5px">ОАЭ</span>
+        </div>
+        <div style="padding:22px">
+          <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--blue);margin-bottom:8px;line-height:1.35">Дубай за 5 дней: маршрут для тех, кто едет впервые</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px">Что посмотреть, где поесть и как добраться дешевле.</div>
+          <div style="display:flex;justify-content:space-between;padding-top:12px;border-top:1px solid var(--border);font-size:12px;color:var(--muted)">
+            <span>27 февраля 2025</span><span style="font-weight:700;color:var(--gold)">Читать →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="blog.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:14px 32px;border-radius:8px;font-size:15px;font-weight:700;transition:background .2s" onmouseover="this.style.background='var(--blue-mid)'" onmouseout="this.style.background='var(--blue)'">
+        Читать все статьи →
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="sec-inner">
+    <div class="contact-grid">
+      <!-- Left -->
+      <div>
+        <div class="sec-tag">Начнём прямо сейчас</div>
+        <h2 class="sec-h2">Оставьте номер —<br/>перезвоним<br/><em style="color:var(--gold);font-style:italic">за 15 минут</em></h2>
+        <div class="contact-why">
+          <div class="why-item"><span class="why-emoji">⚡</span><span class="why-text"><strong>Ответим за 15 минут</strong> в рабочее время и подберём 3–5 вариантов</span></div>
+          <div class="why-item"><span class="why-emoji">🔒</span><span class="why-text"><strong>Цена фиксируется в сумах</strong> — курс не изменится после бронирования</span></div>
+          <div class="why-item"><span class="why-emoji">📞</span><span class="why-text"><strong>Поддержка 24/7</strong> — на связи до возвращения домой</span></div>
+          <div class="why-item"><span class="why-emoji">✈️</span><span class="why-text"><strong>Встречаем в аэропорту</strong> и провожаем до дверей отеля</span></div>
+        </div>
+        <div class="contact-info">
+          <div class="contact-info-title">Прямые контакты</div>
+          <p>📍 Ташкент, Узбекистан</p>
+          <a href="tel:+998901234567">📞 +998 90 123 45 67</a>
+          <a href="https://t.me/semtravel" target="_blank">💬 @semtravel в Telegram</a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <div id="contact-form-wrap">
+          <div class="contact-form-tag">Бесплатная консультация</div>
+          <div class="contact-form-h">Подобрать тур</div>
+          <div class="contact-form-sub">Оставьте заявку — мы свяжемся в течение 15 минут</div>
+          <form onsubmit="submitContact(event)">
+            <div class="fld"><label>Ваше имя *</label><input type="text" placeholder="Алишер" required /></div>
+            <div class="fld"><label>Телефон *</label><input type="tel" id="contact-phone" placeholder="+998 90 000 00 00" required /></div>
+            <div class="fld">
+              <label>Направление</label>
+              <select id="contact-dest">
+                <option value="">Выберите направление</option>
+                <option>🇹🇷 Турция</option>
+                <option>🇦🇪 ОАЭ (Дубай)</option>
+                <option>🇪🇺 Европа</option>
+                <option>🌍 Другое</option>
+              </select>
+            </div>
+            <div class="form-row2">
+              <div class="fld"><label>Дата вылета</label><input type="date" /></div>
+              <div class="fld">
+                <label>Туристов</label>
+                <select>
+                  <option>1 человек</option>
+                  <option selected>2 человека</option>
+                  <option>3 человека</option>
+                  <option>4 человека</option>
+                  <option>5+</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn-submit">Отправить заявку</button>
+            <a href="https://t.me/semtravel" target="_blank" class="btn-tg">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.014 9.49c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.28l-2.95-.924c-.64-.203-.654-.64.136-.949l11.52-4.44c.533-.194 1.001.13.596 1.282z"/></svg>
+              Написать в Telegram
+            </a>
+            <p class="form-note">Нажимая «Отправить», вы соглашаетесь с обработкой данных</p>
+          </form>
+        </div>
+        <div class="form-success" id="contact-success">
+          <div class="form-success-icon">✅</div>
+          <h3>Заявка принята!</h3>
+          <p>Перезвоним в течение 15 минут и подберём идеальный тур под ваш бюджет.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">SEM<span>Travel</span></div>
+        <p class="foot-desc">Надёжное туристическое агентство в Ташкенте. Работаем с 2009 года. Тысячи довольных клиентов по всему Узбекистану.</p>
+      </div>
+      <div>
+        <div class="foot-h">Услуги</div>
+        <div class="foot-links">
+          <a href="#services">Подбор туров</a>
+          <a href="#services">Авиабилеты и отели</a>
+          <a href="#services">Визовая поддержка</a>
+          <a href="#dest">Направления</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Компания</div>
+        <div class="foot-links">
+          <a href="#how">Как работаем</a>
+          <a href="#team">Команда</a>
+          <a href="#reviews">Отзывы</a>
+          <a href="#contact">Контакты</a>
+        </div>
+      </div>
+      <div>
+        <div class="foot-h">Контакты</div>
+        <div class="foot-links">
+          <a>📍 Ташкент, Узбекистан</a>
+          <a href="tel:+998901234567">📞 +998 90 123 45 67</a>
+          <a href="https://t.me/semtravel" target="_blank">💬 @semtravel</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-copy">© 2025 SEM Travel. Все права защищены.</span>
+      <span style="color:var(--gold);letter-spacing:3px;">★★★★★</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FLOATING TELEGRAM ══════════════════════════════════════════════════ -->
+<a href="https://t.me/semtravel" target="_blank" class="float-tg" title="Написать в Telegram">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.014 9.49c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.28l-2.95-.924c-.64-.203-.654-.64.136-.949l11.52-4.44c.533-.194 1.001.13.596 1.282z"/></svg>
+</a>
+
+<!-- ══ MOBILE STICKY CTA ══════════════════════════════════════════════════ -->
+<div class="mob-cta">
+  <a href="tel:+998901234567" class="mob-cta-sec">📞 Позвонить</a>
+  <a href="https://t.me/semtravel" target="_blank" class="mob-cta-main">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.014 9.49c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.26 14.28l-2.95-.924c-.64-.203-.654-.64.136-.949l11.52-4.44c.533-.194 1.001.13.596 1.282z"/></svg>
+    Telegram
+  </a>
+</div>
+
+<script>
+function toggleMob(){document.getElementById('mob-menu').classList.toggle('open')}
+function closeMob(){document.getElementById('mob-menu').classList.remove('open')}
+
+function submitHero(e){
+  e.preventDefault();
+  document.getElementById('hero-form-wrap').style.display='none';
+  document.getElementById('hero-success').style.display='block';
+}
+function submitContact(e){
+  e.preventDefault();
+  document.getElementById('contact-form-wrap').style.display='none';
+  document.getElementById('contact-success').style.display='block';
+}
+function setDest(val){
+  var s=document.getElementById('contact-dest');
+  if(s){for(var i=0;i<s.options.length;i++){if(s.options[i].text.includes(val)){s.selectedIndex=i;break;}}}
+}
+
+// Hide floating button when near footer
+window.addEventListener('scroll',function(){
+  var ft=document.querySelector('.float-tg');
+  var footer=document.querySelector('footer');
+  if(!ft||!footer)return;
+  var fRect=footer.getBoundingClientRect();
+  ft.style.opacity=fRect.top<window.innerHeight-80?'0':'1';
+});
+</script>
+</body>
+</html>
