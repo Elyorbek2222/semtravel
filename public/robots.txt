@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://semtravel.uz/sitemap.xml
+Sitemap: https://semtravel.vercel.app/sitemap.xml
