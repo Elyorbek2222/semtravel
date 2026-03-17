@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ lang, setLang, t }) => {
   const [mobMenuOpen, setMobMenuOpen] = useState(false);
-  const [logoError, setLogoError] = useState(false);
   const location = useLocation();
 
   const toggleMob = () => setMobMenuOpen(!mobMenuOpen);
@@ -49,22 +48,11 @@ const Navbar = ({ lang, setLang, t }) => {
       <nav>
         <div className="nav-inner">
           <Link to="/" className="nav-logo">
-            {!logoError ? (
-              <img
-                src="/logo.svg"
-                alt="SEM Travel Logo"
-                className="nav-logo-img"
-                onError={() => setLogoError(true)}
-              />
-            ) : (
-              <svg width="34" height="34" viewBox="0 0 36 36" className="nav-logo-img">
-                <rect width="36" height="36" rx="8" fill="#0F2552"/>
-                <text x="18" y="25" textAnchor="middle" fontFamily="Georgia,serif" fontSize="18" fontWeight="700" fill="#C9A84C">S</text>
-              </svg>
-            )}
-            <span className="nav-logo-text">
-              SEM<span>Travel</span>
-            </span>
+            <img
+              src="/logo.png"
+              alt="SEM Travel Logo"
+              style={{ height: "40px", width: "auto" }}
+            />
           </Link>
           <div className="nav-links">
             <a href="/#how">{t.nav.how_it_works}</a>

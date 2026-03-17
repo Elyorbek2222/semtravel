@@ -1,9 +1,6 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Footer = ({ t }) => {
-  const [logoError, setLogoError] = useState(false);
-
   return (
     <>
       {/* ══ FOOTER ══ */}
@@ -12,20 +9,11 @@ const Footer = ({ t }) => {
           <div className="foot-top">
             <div>
               <div className="foot-logo">
-                {!logoError ? (
-                  <img
-                    src="/logo.svg"
-                    alt="SEM Travel Logo"
-                    style={{ height: "32px", width: "auto", marginBottom: "12px" }}
-                    onError={() => setLogoError(true)}
-                  />
-                ) : (
-                  <svg width="32" height="32" viewBox="0 0 36 36">
-                    <rect width="36" height="36" rx="8" fill="#0F2552"/>
-                    <text x="18" y="25" textAnchor="middle" fontFamily="Georgia,serif" fontSize="18" fontWeight="700" fill="#C9A84C">S</text>
-                  </svg>
-                )}
-                <span>Travel</span>
+                <img
+                  src="/logo.png"
+                  alt="SEM Travel Logo"
+                  style={{ height: "36px", width: "auto", marginBottom: "12px" }}
+                />
               </div>
               <p className="foot-desc">{t.footer.desc}</p>
             </div>
